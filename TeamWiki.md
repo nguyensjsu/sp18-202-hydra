@@ -6,9 +6,8 @@ Team Wiki:
 1) Bhushan Geete
 
 
-CFD:
-
 BurnDown Chart:
+https://docs.google.com/spreadsheets/d/1Jgj9xme4IYyiTcMyfpV8BqZOlMCCGhYIOtqe74r_D50/edit?usp=sharing
 
 
 ## Week 2 (04/14/2017): Minutes of the meeting
