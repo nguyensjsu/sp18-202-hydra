@@ -8,7 +8,7 @@ Next week, I plan to draw the class diagrams of the existing codes, and think ab
 
 In order to get our feet wet and start adding feature, our team needs to decide on the game we work on. Our main focues this week is to decide our start point. We exchange the examples we explore for the games developed in greenfoot and picked the one that we both are interested in. The communication is crucial and our researches serves as feedbacks.   
 
-#Week 1 (ending 04/07/2017):
+# Week 1 (ending 04/07/2017):
 
 In this week, I explore various game engine greenfoot, unity and decided to use greenfoot as our developing platform. 
 
