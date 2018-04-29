@@ -16,8 +16,9 @@ public class BowAndArrow extends Actor
     private boolean running = true;
     private boolean oKey = false;
     private Number velocityNum;
-    Score score_field;
+    Score scoreObserver;
     UserInfo user;
+    Reaction reactionObserver;
 
     ////// CODE ///////
     /**
@@ -25,10 +26,11 @@ public class BowAndArrow extends Actor
      * Sets up the velocity display.
      * @param velocity_field A parameter
      */
-    public BowAndArrow(Number velocity_field, Score score_field)
+    public BowAndArrow(Number velocity_field, Score scoreObserver, Reaction reactionObserver)
     {
         velocityNum = velocity_field;
-        this.score_field=score_field;
+        this.scoreObserver=scoreObserver;
+        this.reactionObserver = reactionObserver;
         if (UserInfo.isStorageAvailable()) 
         {
             user = UserInfo.getMyInfo();
@@ -57,7 +59,10 @@ public class BowAndArrow extends Actor
         }
         if (Greenfoot.isKeyDown("space") && canShoot < 1)
         {
-            getWorld().addObject(new Arrow(new Vector(getRotation(), (strength + Greenfoot.getRandomNumber(10))-5), getRotation(), score_field), getX(), getY());
+            Arrow a = new Arrow(new Vector(getRotation(), (strength + Greenfoot.getRandomNumber(10))-5), getRotation());
+            a.attach(scoreObserver);
+            a.attach(reactionObserver);
+            getWorld().addObject(a, getX(), getY());
             Greenfoot.playSound("arrow_woosh.wav");
             shots++;
             canShoot = 90;
@@ -65,9 +70,9 @@ public class BowAndArrow extends Actor
         if ( Greenfoot.isKeyDown("p") )
         {
 
-            if (score_field.getScore() > user.getScore())
+            if (scoreObserver.getScore() > user.getScore())
             {
-                user.setScore(score_field.getScore());
+                user.setScore(scoreObserver.getScore());
                 user.store();
             }
 

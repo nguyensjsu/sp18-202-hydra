@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Score extends Actor implements GameObserver
+public class Reaction extends Actor implements GameObserver
 {
     Font font1=new Font("Helvetica",true,false,16); //sets the font to a large, thick, Helvetica. 
     private int currentScore = 0; //Keeps track of game score
@@ -15,7 +15,7 @@ public class Score extends Actor implements GameObserver
      * Creates an image for the Score() class and draw text
      * @param text A parameter
      */
-    public Score(String text)
+    public Reaction(String text)
     {
         GreenfootImage img = new GreenfootImage (350, 135);
         img.setFont(font1);
@@ -25,7 +25,18 @@ public class Score extends Actor implements GameObserver
     }    
     
     public void update(int score){
-        addToScore (score);
+        if(score == 0){
+          setText ("Reaction :(, Failure is first step toward success ");
+        }
+        else if(score == 10){
+            setText ("Reaction :), You are 2nd Robin hood !!!");
+        }
+        else if(score < 7){
+          setText ("Reaction :| Never give up");
+        }
+        else{
+            setText ("Reaction ;), You are almost there !!!");
+        }
     }
 
     /**
@@ -40,27 +51,7 @@ public class Score extends Actor implements GameObserver
         img.drawString(text, 5, 45);
     }
 
-    /**
-     * Method addToScore
-     * Shows the score layout on the screen.
-     * @param points A parameter
-     */
-    public void addToScore (int points)
-    {
-        currentScore+=points;
-        setText("Score: " + currentScore);
-    }
-
-    public void setScore(int newScore)
-    {
-        currentScore = newScore;
-        setText("Score: " + currentScore);
-    }
     
-    public int getScore()
-    {
-        return currentScore;
-    }
     
     /**
      * Act - do whatever the Score wants to do. This method is called whenever

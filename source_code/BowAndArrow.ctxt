@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=BowAndArrow
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ BowAndArrow\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=velocity_field\ score_field
-comment1.target=BowAndArrow(Number,\ Score)
+comment1.params=velocity_field\ scoreObserver\ reactionObserver
+comment1.target=BowAndArrow(Number,\ Score,\ Reaction)
 comment1.text=\r\n\ BowAndArrow\ Constructor\r\n\ Sets\ up\ the\ velocity\ display.\r\n\ @param\ velocity_field\ A\ parameter\r\n
 comment2.params=
 comment2.target=void\ keyPresses()

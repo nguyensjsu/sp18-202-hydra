@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Background extends World
 {
     private Score score_field = null;
+    private Reaction reaction_field = null;
     /**
      * Constructor for objects of class Background.
      * Creates a bow and arrow and sets up velocity and score fields.
@@ -19,8 +20,10 @@ public class Background extends World
         super(600, 400, 1); 
         Number velocity_field = new Number ("Velocity: 0");
         score_field = new Score ("Score: 0");
+        reaction_field = new Reaction("Reaction: :| ");
         addObject(score_field, 600, 50);
-        addObject(new BowAndArrow(velocity_field, score_field), 50, 200);
+        addObject(reaction_field, 200, 100);
+        addObject(new BowAndArrow(velocity_field, score_field, reaction_field), 50, 200);
         addObject(velocity_field, 130, 50);
     }
 

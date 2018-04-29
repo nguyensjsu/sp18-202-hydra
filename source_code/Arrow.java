@@ -1,6 +1,7 @@
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.math.*;
+import java.util.*;
 
 /**
  * Write a description of class Arrow here.
@@ -8,7 +9,7 @@ import java.math.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Arrow extends SmoothMover
+public class Arrow extends SmoothMover implements Subject
 {
     ////// VARIABLES //////  
 
@@ -22,8 +23,10 @@ public class Arrow extends SmoothMover
     private int sign;
     private double vertSpeed;
     private boolean onTarget;
-    private Score scoreNum;
+    
+    private List<GameObserver> observers = new ArrayList<GameObserver>();
     private boolean scored = false;
+    private int scoreToUpdate;
 
     ////// CODE //////
     /**
@@ -33,13 +36,13 @@ public class Arrow extends SmoothMover
      * @param startRotation A parameter
      * @param score_field A parameter
      */
-    public Arrow(Vector vector, int startRotation, Score score_field)
+    public Arrow(Vector vector, int startRotation)
     {
         super(vector);
         rotation = startRotation;
         setRotation(rotation);
         vSpeed = -jumpStrength;
-        scoreNum = score_field;
+        
     }
 
     /**
@@ -71,49 +74,68 @@ public class Arrow extends SmoothMover
     {
         //white ring top
         if ( onTarget == true && getY() < 112 && getY() >= 87 && scored == false)
-        { scoreNum.addToScore(1);
+        {   
+            scoreToUpdate = 1;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //black ring top
         else if ( onTarget == true && getY() < 137 && getY() >= 112 && scored == false)
-        { scoreNum.addToScore(3);
+        { 
+            scoreToUpdate = 3;
+            notifyObservers();
+            
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //blue ring top
         else if ( onTarget == true && getY() < 161 && getY() >= 137 && scored == false)
-        { scoreNum.addToScore(5);
+        { 
+            scoreToUpdate = 5;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //red ring top
         else if ( onTarget == true && getY() < 187 && getY() >= 161 && scored == false)
-        { scoreNum.addToScore(7);
+        {   scoreToUpdate = 7;
+            notifyObservers();
+
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //yellow dot
         else if ( onTarget == true && getY() < 236 && getY() >= 187 && scored == false)
-        { scoreNum.addToScore(10);
+        {   scoreToUpdate = 10;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //red ring bottom
         else if ( onTarget == true && getY() < 261 && getY() >= 236 && scored == false)
-        { scoreNum.addToScore(7);
+        { scoreToUpdate = 7;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //blue ring bottom
         else if ( onTarget == true && getY() < 287 && getY() >= 261 && scored == false)
-        { scoreNum.addToScore(5);
+        { scoreToUpdate = 5;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //black ring bottom
         else if ( onTarget == true && getY() < 311 && getY() >= 287 && scored == false)
-        { scoreNum.addToScore(3);
+        { scoreToUpdate = 3;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //white ring bottom
         else if ( onTarget == true && getY() < 325 && getY() >= 311 && scored == false)
-        { scoreNum.addToScore(1);
+        { scoreToUpdate = 1;
+            notifyObservers();
             Greenfoot.playSound("hit-target.wav");
             scored = true; }
+        else if (onTarget == false){
+            scoreToUpdate = 0;
+            notifyObservers();
+            scored = false;
+        }
         //87, 112, 137, 161, 187, 236, 261, 287, 311, 338
     }
 
@@ -161,6 +183,19 @@ public class Arrow extends SmoothMover
         {
             getWorld().removeObject(this);
         }
+    }
+    
+    public void attach(GameObserver obj){
+        observers.add(obj);
+    }    
+    public  void detach(GameObserver obj){
+        observers.remove(obj);
+    }
+    public  void notifyObservers(){
+        for(int i=0;i<observers.size();i++){
+            observers.get(i).update(scoreToUpdate);
+        }
+        
     }
 }    
 
