@@ -8,6 +8,20 @@ https://docs.google.com/spreadsheets/d/1Jgj9xme4IYyiTcMyfpV8BqZOlMCCGhYIOtqe74r_
 # Team Members:
 1) Bhushan Geete
 
+## Week 4 (04/28/2017): Weekly Scrum Report
+
+1. What tasks did I work on / complete? : implemented code for observer design pattern
+2. What am I planning to work on next?: Start integration test.
+3. What tasks are blocked waiting on another team member? : None
+
+
+## Week 3 (04/21/2017): Weekly Scrum Report
+
+1. What tasks did I work on / complete? :  I design the reaction module the game from greenfoot.
+2. What am I planning to work on next?: Start implementation of modules.
+3. What tasks are blocked waiting on another team member? : None. 
+
+
 ## Week 2 (04/14/2017): Weekly Scrum Report
 
 1. What tasks did I work on / complete? : Decided the game and explore code for game.
