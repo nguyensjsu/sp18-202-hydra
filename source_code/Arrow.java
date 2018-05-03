@@ -27,7 +27,7 @@ public class Arrow extends SmoothMover implements Subject
     private List<GameObserver> observers = new ArrayList<GameObserver>();
     private boolean scored = false;
     private int scoreToUpdate;
-
+    SoundManager sManager; 
     ////// CODE //////
     /**
      * Arrow Constructor
@@ -36,12 +36,13 @@ public class Arrow extends SmoothMover implements Subject
      * @param startRotation A parameter
      * @param score_field A parameter
      */
-    public Arrow(Vector vector, int startRotation)
+    public Arrow(Vector vector, int startRotation, SoundManager sManager)
     {
         super(vector);
         rotation = startRotation;
         setRotation(rotation);
         vSpeed = -jumpStrength;
+        this.sManager = sManager;
         
     }
 
@@ -77,35 +78,38 @@ public class Arrow extends SmoothMover implements Subject
         {   
             scoreToUpdate = 1;
             notifyObservers();
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //black ring top
         else if ( onTarget == true && getY() < 137 && getY() >= 112 && scored == false)
         { 
             scoreToUpdate = 3;
             notifyObservers();
-            
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //blue ring top
         else if ( onTarget == true && getY() < 161 && getY() >= 137 && scored == false)
         { 
             scoreToUpdate = 5;
             notifyObservers();
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //red ring top
         else if ( onTarget == true && getY() < 187 && getY() >= 161 && scored == false)
         {   scoreToUpdate = 7;
             notifyObservers();
-
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //yellow dot
         else if ( onTarget == true && getY() < 236 && getY() >= 187 && scored == false)
         {   scoreToUpdate = 10;
             notifyObservers();
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //red ring bottom
         else if ( onTarget == true && getY() < 261 && getY() >= 236 && scored == false)
@@ -117,19 +121,22 @@ public class Arrow extends SmoothMover implements Subject
         else if ( onTarget == true && getY() < 287 && getY() >= 261 && scored == false)
         { scoreToUpdate = 5;
             notifyObservers();
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //black ring bottom
         else if ( onTarget == true && getY() < 311 && getY() >= 287 && scored == false)
         { scoreToUpdate = 3;
             notifyObservers();
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         //white ring bottom
         else if ( onTarget == true && getY() < 325 && getY() >= 311 && scored == false)
         { scoreToUpdate = 1;
             notifyObservers();
-            Greenfoot.playSound("hit-target.wav");
+            sManager.playSound("hit-target");
+            //Greenfoot.playSound("hit-target.wav");
             scored = true; }
         else if (onTarget == false){
             scoreToUpdate = 0;

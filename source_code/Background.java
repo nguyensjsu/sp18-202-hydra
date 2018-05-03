@@ -10,6 +10,7 @@ public class Background extends World
 {
     private Score score_field = null;
     private Reaction reaction_field = null;
+    private SoundManager sManager;
     /**
      * Constructor for objects of class Background.
      * Creates a bow and arrow and sets up velocity and score fields.
@@ -21,10 +22,14 @@ public class Background extends World
         Number velocity_field = new Number ("Velocity: 0");
         score_field = new Score ("Score: 0");
         reaction_field = new Reaction("Reaction: :| ");
+        MusicOn musicOn = new MusicOn();
+        SoundManager sManager = new SoundManager(musicOn);
+        
         addObject(score_field, 600, 50);
         addObject(reaction_field, 200, 100);
-        addObject(new BowAndArrow(velocity_field, score_field, reaction_field), 50, 200);
+        addObject(new BowAndArrow(velocity_field, score_field, reaction_field, sManager), 50, 200);
         addObject(velocity_field, 130, 50);
+        addObject(sManager, 600, 100 );
     }
 
     /**
@@ -37,4 +42,6 @@ public class Background extends World
         removeObjects(arrows);
         score_field.setScore(0);
     }
+    
+   
 }

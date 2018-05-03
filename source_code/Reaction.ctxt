@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=Reaction
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Score\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Score\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=text
 comment1.target=Reaction(java.lang.String)
-comment1.text=\r\n\ Score\ Constructor\r\n\ Creates\ an\ image\ for\ the\ Score()\ class\ and\ draw\ text\r\n\ @param\ text\ A\ parameter\r\n
+comment1.text=\n\ Score\ Constructor\n\ Creates\ an\ image\ for\ the\ Score()\ class\ and\ draw\ text\n\ @param\ text\ A\ parameter\n
 comment2.params=score
 comment2.target=void\ update(int)
 comment3.params=text
 comment3.target=void\ setText(java.lang.String)
-comment3.text=\r\n\ Method\ setText\r\n\ updates\ score\ using\ setText()\ -\ see\ the\ Enemy's\ collision\ event\r\n\ @param\ text\ A\ parameter\r\n
+comment3.text=\n\ Method\ setText\n\ updates\ score\ using\ setText()\ -\ see\ the\ Enemy's\ collision\ event\n\ @param\ text\ A\ parameter\n
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ Score\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment4.text=\n\ Act\ -\ do\ whatever\ the\ Score\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 numComments=5

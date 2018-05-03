@@ -16,9 +16,11 @@ public class BowAndArrow extends Actor
     private boolean running = true;
     private boolean oKey = false;
     private Number velocityNum;
+    private boolean musicOn = true;
     Score scoreObserver;
     UserInfo user;
     Reaction reactionObserver;
+    SoundManager sManager;
 
     ////// CODE ///////
     /**
@@ -26,11 +28,12 @@ public class BowAndArrow extends Actor
      * Sets up the velocity display.
      * @param velocity_field A parameter
      */
-    public BowAndArrow(Number velocity_field, Score scoreObserver, Reaction reactionObserver)
+    public BowAndArrow(Number velocity_field, Score scoreObserver, Reaction reactionObserver, SoundManager sManager)
     {
         velocityNum = velocity_field;
         this.scoreObserver=scoreObserver;
         this.reactionObserver = reactionObserver;
+        this.sManager = sManager;
         if (UserInfo.isStorageAvailable()) 
         {
             user = UserInfo.getMyInfo();
@@ -59,11 +62,13 @@ public class BowAndArrow extends Actor
         }
         if (Greenfoot.isKeyDown("space") && canShoot < 1)
         {
-            Arrow a = new Arrow(new Vector(getRotation(), (strength + Greenfoot.getRandomNumber(10))-5), getRotation());
+            Arrow a = new Arrow(new Vector(getRotation(), (strength + Greenfoot.getRandomNumber(10))-5), getRotation(), sManager);
             a.attach(scoreObserver);
             a.attach(reactionObserver);
             getWorld().addObject(a, getX(), getY());
-            Greenfoot.playSound("arrow_woosh.wav");
+            
+            sManager.playSound("arrow_woosh");
+            //Greenfoot.playSound("arrow_woosh.wav");
             shots++;
             canShoot = 90;
         }
@@ -92,6 +97,8 @@ public class BowAndArrow extends Actor
         {
             velocityNum.setText("Velocity: " + strength);
         }
+        
+        
     }
 
     /**
@@ -105,7 +112,10 @@ public class BowAndArrow extends Actor
         if ( canShoot == 1 )
         {setImage("bowandarrow200.png");}
         if ( canShoot == 15 )
-        {Greenfoot.playSound("bow_shoot_pull_short.wav"); }
+        {
+            sManager.playSound("bow_shoot_pull_short");
+            //Greenfoot.playSound("bow_shoot_pull_short.wav"); 
+        }
     }
 
     /**
