@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=SoundManager
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ SoundManager\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ SoundManager\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=strategy
+comment2.target=SoundManager(Strategy)
+comment3.params=text
+comment3.target=void\ setText(java.lang.String)
+comment3.text=\r\n\ Method\ setText\r\n\ updates\ score\ using\ setText()\ -\ see\ the\ Enemy's\ collision\ event\r\n\ @param\ text\ A\ parameter\r\n
+comment4.params=musicOn
+comment4.target=void\ setMusicOption(boolean)
+comment5.params=
+comment5.target=boolean\ getMusicOption()
+comment6.params=strategy
+comment6.target=void\ setStrategy(Strategy)
+comment7.params=input
+comment7.target=void\ doOp(java.lang.String)
+comment8.params=input
+comment8.target=void\ playSound(java.lang.String)
+comment9.params=
+comment9.target=void\ keyPressed()
+numComments=10

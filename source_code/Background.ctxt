@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Background
-comment0.text=\n\ Write\ a\ description\ of\ class\ Background\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Background\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Background()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Background.\n\ Creates\ a\ bow\ and\ arrow\ and\ sets\ up\ velocity\ and\ score\ fields.\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Background.\r\n\ Creates\ a\ bow\ and\ arrow\ and\ sets\ up\ velocity\ and\ score\ fields.\r\n
 comment2.params=
 comment2.target=void\ restart()
-comment2.text=\n\ Method\ restart\n\ Removes\ all\ arrows\n
+comment2.text=\r\n\ Method\ restart\r\n\ Removes\ all\ arrows\r\n
 numComments=3
