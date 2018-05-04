@@ -1,4 +1,4 @@
-#Week 4-5 (ending 05/04/2017):
+# Week 4-5 (ending 05/04/2017):
 In this two week, I explore the different design patterns and implement the sound on and off module. I also work on diagram and documentations
 
 # Courage (XP core value)
