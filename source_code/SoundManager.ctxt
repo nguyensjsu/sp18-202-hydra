@@ -1,14 +1,25 @@
 #BlueJ class context
 comment0.target=SoundManager
+<<<<<<< HEAD
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ SoundManager\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ SoundManager\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ SoundManager\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ SoundManager\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+>>>>>>> sound on and off supported files
 comment2.params=strategy
 comment2.target=SoundManager(Strategy)
 comment3.params=text
 comment3.target=void\ setText(java.lang.String)
+<<<<<<< HEAD
 comment3.text=\r\n\ Method\ setText\r\n\ updates\ score\ using\ setText()\ -\ see\ the\ Enemy's\ collision\ event\r\n\ @param\ text\ A\ parameter\r\n
+=======
+comment3.text=\n\ Method\ setText\n\ updates\ score\ using\ setText()\ -\ see\ the\ Enemy's\ collision\ event\n\ @param\ text\ A\ parameter\n
+>>>>>>> sound on and off supported files
 comment4.params=musicOn
 comment4.target=void\ setMusicOption(boolean)
 comment5.params=

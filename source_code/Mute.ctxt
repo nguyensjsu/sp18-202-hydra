@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Mute
+<<<<<<< HEAD
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Mute\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+=======
+comment0.text=\n\ Write\ a\ description\ of\ class\ Mute\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+>>>>>>> sound on and off supported files
 comment1.params=
 comment1.target=void\ act()
 comment2.params=input
